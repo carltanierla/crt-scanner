@@ -19,4 +19,4 @@ jobs:
       - name: Run scanner
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-        run: python scan.py
+        run: python crt-scanner.py
