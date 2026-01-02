@@ -12,7 +12,7 @@ init(autoreset=True)
 # --- CONFIGURATION ---
 BASE_URL = "https://contract.mexc.co"
 TIMEFRAMES = ["Min60", "Hour4"]         # MEXC API codes for 1h and 4h
-CHECK_LIMIT = 800                       # Number of pairs to check
+CHECK_LIMIT = 100                       # Number of pairs to check
 MIN_VOL_USDT = 500000                   # Volume filter
 SCAN_INTERVAL = 900                     # 15 Minutes in seconds
 # PASTE YOUR DISCORD WEBHOOK URL HERE vvv
@@ -193,6 +193,7 @@ if __name__ == "__main__":
             time.sleep(SCAN_INTERVAL)
     except KeyboardInterrupt:
         print("\nScanner stopped by user.")
+
 
 
 
