@@ -16,7 +16,7 @@ CHECK_LIMIT = 800                       # Number of pairs to check
 MIN_VOL_USDT = 500000                   # Volume filter
 SCAN_INTERVAL = 900                     # 15 Minutes in seconds
 # PASTE YOUR DISCORD WEBHOOK URL HERE vvv
-WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
+WEBHOOK_URL = 'https://discord.com/api/webhooks/1443071530774040697/K3QsBSar199iOpCFE0ybWYifHqCd6YmaCYIvBuMayP01IrTpevwFuL3ofwiq7JD804m6'
 
 def send_discord_alert(matches):
     """Sends a summary of matches to Discord via Webhook."""
@@ -197,4 +197,5 @@ if __name__ == "__main__":
             time.sleep(SCAN_INTERVAL)
     except KeyboardInterrupt:
         print("\nScanner stopped by user.")
+
 
