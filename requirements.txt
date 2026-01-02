@@ -1,3 +1,11 @@
 ccxt
 pandas
+json
 requests
+datetime
+colorama
+time
+datetime
+Fore
+Style
+init
