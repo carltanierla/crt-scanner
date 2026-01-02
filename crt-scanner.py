@@ -1,4 +1,5 @@
 import requests
+import os
 import pandas as pd
 import time
 import json
@@ -196,3 +197,4 @@ if __name__ == "__main__":
             time.sleep(SCAN_INTERVAL)
     except KeyboardInterrupt:
         print("\nScanner stopped by user.")
+
