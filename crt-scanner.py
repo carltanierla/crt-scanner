@@ -31,11 +31,8 @@ def send_discord_alert(matches):
     for m in matches:
         emoji = "🔴" if m['type'] == "BEARISH" else "🟢"
         tf_emoji = "⏱️"
-        # MEXC Futures Link
-        link = f"https://futures.mexc.com/exchange/{m['symbol']}"
         message_content += f"{emoji} **{m['symbol']}** [{m['type']}]\n"
         message_content += f"{tf_emoji} Timeframe: {m['tf']}\n"
-        message_content += f"🔗 [View Chart]({link})\n\n"
 
     payload = {
         "content": message_content,
@@ -198,6 +195,7 @@ if __name__ == "__main__":
             time.sleep(SCAN_INTERVAL)
     except KeyboardInterrupt:
         print("\nScanner stopped by user.")
+
 
 
 
