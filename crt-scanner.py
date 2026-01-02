@@ -16,12 +16,10 @@ CHECK_LIMIT = 800                       # Number of pairs to check
 MIN_VOL_USDT = 500000                   # Volume filter
 SCAN_INTERVAL = 900                     # 15 Minutes in seconds
 # PASTE YOUR DISCORD WEBHOOK URL HERE vvv
-WEBHOOK_URL = 'https://discord.com/api/webhooks/1443071530774040697/K3QsBSar199iOpCFE0ybWYifHqCd6YmaCYIvBuMayP01IrTpevwFuL3ofwiq7JD804m6'
+WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
 
 def send_discord_alert(matches):
     """Sends a summary of matches to Discord via Webhook."""
-    if not matches:
-        return
 
     # Build the message content
     message_content = "**CRT Reversal Signals Detected** 🚨\n"
@@ -183,10 +181,7 @@ def run_screener():
     print(f"\n{Fore.CYAN}Cycle Complete. Found {len(matches)} matches.{Style.RESET_ALL}")
     
     # Send alerts if matches found
-    if matches and WEBHOOK_URL != "YOUR_DISCORD_WEBHOOK_URL_HERE":
-        send_discord_alert(matches)
-    elif matches and WEBHOOK_URL == "YOUR_DISCORD_WEBHOOK_URL_HERE":
-        print(f"{Fore.YELLOW}Matches found, but Webhook URL is not set.{Style.RESET_ALL}")
+    send_discord_alert(matches)
 
 if __name__ == "__main__":
     try:
@@ -197,5 +192,6 @@ if __name__ == "__main__":
             time.sleep(SCAN_INTERVAL)
     except KeyboardInterrupt:
         print("\nScanner stopped by user.")
+
 
 
