@@ -189,12 +189,10 @@ def run_screener():
 if __name__ == "__main__":
     try:
         print(f"{Fore.GREEN}CRT Scanner initialized. Running every 15 minutes...{Style.RESET_ALL}")
-        while True:
-            run_screener()
-            print(f"{Fore.YELLOW}Sleeping for 15 minutes...{Style.RESET_ALL}")
-            time.sleep(SCAN_INTERVAL)
+        run_screener()
     except KeyboardInterrupt:
         print("\nScanner stopped by user.")
+
 
 
 
